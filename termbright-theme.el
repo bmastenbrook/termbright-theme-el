@@ -57,6 +57,18 @@
  '(next-error ((t (:background "blue" :foreground "white"))))
  '(query-replace ((t (:background "magenta4" :foreground "cyan1")))))
 
+;;;###autoload
+(when load-file-name
+  (add-to-list
+   'custom-theme-load-path
+   (file-name-as-directory (file-name-directory load-file-name))))
+
+;;;###autoload
+(defun termbright-theme ()
+  "Load the termbright-theme."
+  (interactive)
+  (load-theme 'termbright t))
+
 (provide-theme 'termbright)
 
 ;;; termbright-theme.el ends here
